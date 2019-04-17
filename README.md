@@ -20,6 +20,41 @@ They'd like a data engineer to create a Postgres database with tables designed t
 - elt.py: define the ETL process
 - sql_queries.py: define the SQL queries
 
+## Usage
+
+Create tables and execute ETL.
+
+```
+$ python create_tables.py
+$ python etl.py
+```
+
+Created tables by the command are as folow,
+
+### Fact Table
+
+#### songplays - records in log data associated with song plays.
+- songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+<img src="assets/songplays.png">
+
+### Dimension Tables
+
+#### users - users in the app
+- user_id, first_name, last_name, gender, level
+<img src="assets/users.png">
+
+#### songs - songs in music database
+- song_id, title, artist_id, year, duration
+<img src="assets/songs.png">
+
+#### artists - artists in music database
+- artist_id, name, location, lattitude, longitude
+<img src="assets/artists.png">
+
+#### time - timestamps of records in songplays broken down into specific units
+- start_time, hour, day, week, month, year, weekday
+<img src="assets/time.png">
+
 ## Acknowledgements
 
 I wish to thank Udacity for advice and review.
