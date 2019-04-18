@@ -121,33 +121,38 @@ $ python etl.py
 
 #### songplays - records in log data associated with song plays.
 - table description
-<img src="assets/desc_songplay.png">
+<img src="assets/desc_songplays.png" height="250">
+
 - examples
-<img src="assets/songplays.png" height="240">
+<img src="assets/songplays.png" height="250">
 
 ### Dimension Tables
 
 #### users - users in the app
 - table description
-<img src="assets/desc_users.png">
+<img src="assets/desc_users.png" height="170">
+
 - examples
 <img src="assets/users.png" height="170">
 
 #### songs - songs in music database
 - table description
-<img src="assets/desc_songs.png">
+<img src="assets/desc_songs.png" height="170">
+
 - examples
 <img src="assets/songs.png" height="170">
 
 #### artists - artists in music database
 - table description
-<img src="assets/desc_artists.png">
+<img src="assets/desc_artists.png" height="170">
+
 - examples
 <img src="assets/artists.png" height="180">
 
 #### time - timestamps of records in songplays broken down into specific units
 - table description
-<img src="assets/desc_time.png">
+<img src="assets/desc_time.png" height="200">
+
 - examples
 <img src="assets/time.png" height="180">
 
