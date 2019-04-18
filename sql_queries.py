@@ -10,13 +10,13 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 
 songplay_table_create = ("""
 CREATE TABLE songplays (
-    songplay_id serial PRIMARY KEY
-    ,start_time bigint
-    ,user_id varchar
-    ,level varchar
+    songplay_id serial NOT NULL PRIMARY KEY
+    ,start_time bigint NOT NULL
+    ,user_id varchar NOT NULL
+    ,level varchar NOT NULL
     ,song_id varchar
     ,artist_id varchar
-    ,session_id int
+    ,session_id int NOT NULL
     ,lcation varchar,
     user_agent varchar
 );
@@ -24,28 +24,28 @@ CREATE TABLE songplays (
 
 user_table_create = ("""
 CREATE TABLE users (
-    user_id varchar PRIMARY KEY
-    ,first_name varchar
-    ,last_name varchar
+    user_id varchar NOT NULL PRIMARY KEY
+    ,first_name varchar NOT NULL
+    ,last_name varchar NOT NULL
     ,gender varchar
-    ,level varchar
+    ,level varchar NOT NULL
 );
 """)
 
 song_table_create = ("""
 CREATE TABLE songs (
-    song_id varchar PRIMARY KEY
-    ,title varchar
-    ,artist_id varchar
+    song_id varchar NOT NULL PRIMARY KEY
+    ,title varchar NOT NULL
+    ,artist_id varchar NOT NULL
     ,year int
-    ,duration float
+    ,duration float NOT NULL
 );
 """)
 
 artist_table_create = ("""
 CREATE TABLE artists (
-    artist_id varchar PRIMARY KEY
-    ,name varchar
+    artist_id varchar NOT NULL PRIMARY KEY
+    ,name varchar NOT NULL
     ,location varchar
     ,latitude float
     ,longitude float
@@ -54,13 +54,13 @@ CREATE TABLE artists (
 
 time_table_create = ("""
 CREATE TABLE time (
-    start_time bigint PRIMARY KEY
-    ,hour int
-    ,day int
-    ,week int
-    ,month int
-    ,year int
-    ,weekday int
+    start_time bigint NOT NULL PRIMARY KEY
+    ,hour int NOT NULL
+    ,day int NOT NULL
+    ,week int NOT NULL
+    ,month int NOT NULL
+    ,year int NOT NULL
+    ,weekday int NOT NULL
 );
 """)
 
@@ -136,9 +136,9 @@ FROM
     songs s 
     JOIN artists a ON s.artist_id=a.artist_id
 WHERE
-    s.title=%s
-    AND a.name=%s
-    AND s.duration=%s
+    s.title = %s
+    AND a.name = %s
+    AND s.duration = %s
 GROUP BY
     s.song_id
     ,a.artist_id
